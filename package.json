@@ -1,0 +1,25 @@
+{
+    "name": "atomic-lib",
+    "version": "1.0.2",
+    "description": "Easy client side composition of microfrontends using web components.",
+    "main": "dist/atomic.js",
+    "types": "dist/atomic.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "prepublishOnly": "npm run build && npm test"
+    },
+    "keywords": [
+        "web components",
+        "custom elements",
+        "typescript"
+    ],
+    "author": "Akram Saouri",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^27.0.3",
+        "jest": "^27.4.5",
+        "ts-jest": "^27.1.2",
+        "typescript": "^4.5.4"
+    }
+}
