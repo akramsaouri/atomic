@@ -30,11 +30,12 @@ Here's a simple example of how to create a custom element using Atomic:
 import { Atomic } from "atomic-library";
 
 class MyCounter extends Atomic {
-    count = 0;
+    atom = {
+        count: parseInt(this.getAttribute("initial-count") || "0", 10),
+    };
 
     increment = () => {
-        this.count++;
-        this.setAtom({ count: this.count });
+        this.setAtom({ count: this.atom.count + 1 });
     };
 
     render() {
@@ -54,7 +55,7 @@ customElements.define("my-counter", MyCounter);
 You can then use this custom element in your HTML:
 
 ```html
-<my-counter></my-counter>
+<my-counter initial-count="10"></my-counter>
 ```
 
 ## Framework Support
