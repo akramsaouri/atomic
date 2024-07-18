@@ -87,10 +87,9 @@ Atomic provides built-in state management through the `atom` object and `setAtom
 
 ```typescript
 class MyComponent extends Atomic {
-    constructor() {
-        super();
-        this.setAtom({ count: 0 });
-    }
+    atom = {
+        count: 0,
+    };
 
     increment = () => {
         this.setAtom({ count: this.atom.count + 1 });
